@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HotelBook - Acesso</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <main class="access-page">
+        <p class="eyebrow">HOTELBOOK</p>
+        <h1>Entre na sua área</h1>
+        <p class="intro">Acesse sua conta de cliente ou o painel administrativo.</p>
+        <form id="login-form" class="access-form">
+            <label for="role">Tipo de acesso</label>
+            <select id="role" name="role" required>
+                <option value="cliente">Cliente</option>
+                <option value="administrador">Administrador</option>
+            </select>
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="username" placeholder="voce@exemplo.com" required>
+            <label for="password">Senha</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Sua senha" required>
+            <p id="login-message" class="form-message" role="alert"></p>
+            <button type="submit">Entrar</button>
+        </form>
+        <p class="signup-link">Ainda não tem conta? <a href="cadastro.html">Cadastre-se como cliente</a></p>
+    </main>
+    <script src="scripts/app.js"></script>
+</body>
+</html>

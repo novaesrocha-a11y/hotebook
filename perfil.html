@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HotelBook - Área do Cliente</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header class="client-header">
+        <a class="client-brand" href="perfil.html"><span class="client-brand-mark">H</span>HotelBook</a>
+        <nav class="client-nav" aria-label="Navegação da conta"><a href="#reservas">Minhas reservas</a><a href="#meus-dados">Meu perfil</a></nav>
+        <div class="client-account"><span class="client-avatar" id="user-initials">CL</span><span id="header-user-name">Cliente</span><button class="client-logout" type="button" onclick="logout()">Sair</button></div>
+    </header>
+    <main class="client-shell">
+        <section class="client-hero" aria-labelledby="client-welcome">
+            <img class="client-hero-image" src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&amp;fit=crop&amp;w=1800&amp;q=85" alt="Piscina de um resort rodeada por jardins e palmeiras">
+            <div class="client-hero-content"><p class="client-hero-kicker">HOTELBOOK <span>•</span> SUA PRÓXIMA VIAGEM</p><h1 id="client-welcome">Que bom ter você de volta, <span id="user-name">Cliente</span>.</h1><p>Suas próximas estadias estão a um passo de acontecer.</p><a class="hero-link" href="#reservas">Acompanhar reservas <span aria-hidden="true">↓</span></a></div>
+        </section>
+
+        <section class="client-summary" aria-label="Resumo da conta">
+            <div><span class="summary-label">PRÓXIMAS ESTADIAS</span><strong id="upcoming-count">2</strong></div>
+            <div><span class="summary-label">CONFIRMADAS</span><strong id="confirmed-count">1</strong></div>
+            <div><span class="summary-label">DESTINOS</span><strong id="destination-count">0 destinos</strong></div>
+            <p>Uma boa viagem começa nos detalhes.</p>
+        </section>
+
+        <section class="client-section" id="reservas" aria-labelledby="reservations-title">
+            <div class="client-section-heading"><div><p class="eyebrow">SUA JORNADA</p><h2 id="reservations-title">Próximas estadias</h2></div><div class="reservation-filters" role="group" aria-label="Filtrar reservas"><button class="reservation-filter active" type="button" data-reservation-filter="todas" aria-pressed="true">Todas <span>2</span></button><button class="reservation-filter" type="button" data-reservation-filter="confirmada" aria-pressed="false">Confirmadas <span>1</span></button><button class="reservation-filter" type="button" data-reservation-filter="pendente" aria-pressed="false">Pendentes <span>1</span></button></div></div>
+            <div class="client-reservations" id="client-reservations"></div>
+            <p class="empty-state" id="reservation-empty" hidden>Nenhuma reserva encontrada para esta conta.</p>
+        </section>
+
+        <section class="client-section client-profile" id="meus-dados" aria-labelledby="profile-title">
+            <div class="client-section-heading"><div><p class="eyebrow">SUA CONTA</p><h2 id="profile-title">Dados do perfil</h2></div><button class="edit-profile-button" type="button" onclick="editProfile()">Editar dados <span aria-hidden="true">↗</span></button></div>
+            <div class="profile-details"><div><span>Nome completo</span><strong id="profile-name">Cliente</strong></div><div><span>E-mail</span><strong id="user-email">cliente@example.com</strong></div><div><span>Tipo de conta</span><strong>Cliente HotelBook</strong></div></div>
+        </section>
+    </main>
+
+    <dialog class="room-dialog profile-dialog" id="profile-dialog" aria-labelledby="profile-dialog-title">
+        <form id="profile-form">
+            <div class="dialog-heading"><div><p class="eyebrow">SUA CONTA</p><h2 id="profile-dialog-title">Editar dados do perfil</h2></div><button class="dialog-close" id="close-profile-dialog" type="button" aria-label="Fechar">×</button></div>
+            <label for="profile-name-input">Nome completo</label><input id="profile-name-input" name="name" type="text" autocomplete="name" maxlength="80" required>
+            <label for="profile-email-input">E-mail</label><input id="profile-email-input" name="email" type="email" autocomplete="email" required>
+            <p id="profile-message" class="form-message" role="alert"></p>
+            <div class="dialog-actions"><button class="secondary-button" id="cancel-profile-dialog" type="button">Cancelar</button><button class="primary-action" type="submit">Salvar alterações</button></div>
+        </form>
+    </dialog>
+    <script src="scripts/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HotelBook - Cadastro</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <h1>Cadastro de Usuário</h1>
+    <form id="cadastro-form">
+        <label for="name">Nome</label>
+        <input id="name" name="name" type="text" autocomplete="name" placeholder="Seu nome" required>
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" required>
+        <label for="password">Senha</label>
+        <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" placeholder="Mínimo de 8 caracteres" required>
+        <p id="signup-message" class="form-message" role="alert"></p>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <p class="signup-link"><a href="index.html">Voltar para o acesso</a></p>
+    <script src="scripts/app.js"></script>
+</body>
+</html>

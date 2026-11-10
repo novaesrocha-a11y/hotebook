@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: hotelbook
+    runtime: node
+    plan: free
+    region: virginia
+    buildCommand: npm ci && npm test
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        value: admin@hotelbook.com
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: DEMO_CLIENT_EMAIL
+        value: cliente@hotelbook.com
+      - key: DEMO_CLIENT_PASSWORD
+        sync: false
