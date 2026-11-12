@@ -2,14 +2,20 @@ services:
   - type: web
     name: hotelbook
     runtime: node
-    plan: free
+    plan: starter
     region: virginia
     buildCommand: npm ci && npm test
     startCommand: npm start
     healthCheckPath: /api/health
+    disk:
+      name: hotelbook-data
+      mountPath: /var/data
+      sizeGB: 1
     envVars:
       - key: NODE_ENV
         value: production
+      - key: DATABASE_PATH
+        value: /var/data/hotelbook.sqlite
       - key: SESSION_SECRET
         generateValue: true
       - key: ADMIN_EMAIL
